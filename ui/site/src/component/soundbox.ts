@@ -16,7 +16,7 @@ class SoundBox {
       this.sounds.get(name).volume(volume * this.getVolume());
       this.sounds.get(name).play();
     };
-    if (window.Howler.ctx.state == "suspended") window.Howler.ctx.resume().then(doPlay);
+    if (window.Howler.ctx?.state === 'suspended') window.Howler.ctx.resume().then(doPlay);
     else doPlay();
   };
 
